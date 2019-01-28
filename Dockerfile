@@ -24,7 +24,8 @@ COPY --from=BUILD /app/dist/ /usr/share/nginx/html
 RUN chmod 777 -R /usr/share/nginx/html
 
 ## Overwrit the default NGINX config using the custom config file
-#COPY ./custom-nginx-file.conf /etc/nginx/conf.d/default.conf
+COPY ./custom-nginx-file.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
 ## Initiate the NGINX
 #CMD ["nginx", "-g", "daemon off;"]
