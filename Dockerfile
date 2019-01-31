@@ -1,5 +1,7 @@
 FROM node:alpine as BUILD
 
+RUN mkdir /app
+
 WORKDIR '/app'
 
 COPY package.json .
