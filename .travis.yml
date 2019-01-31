@@ -3,14 +3,14 @@ services:
   - docker
 
 script:
-   - docker build -t angular-app-niginx2 .
-   - docker images angular-app-niginx2
+   - docker build -t angular-app-niginx .
+   - docker images angular-app-niginx
 
 before_deploy:
   - docker login -u ian901223 -p sodium90
 
 deploy:
   provider: script
-  script: docker push angular-app-niginx2
+  script: docker push angular-app-niginx
   on:
     branch: master
